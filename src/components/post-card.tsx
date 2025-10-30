@@ -11,6 +11,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Clock, Calendar, ArrowUpRight } from "lucide-react";
+import { lv } from "date-fns/locale/lv";
 
 interface PostCardProps {
   post: Post;
@@ -53,7 +54,9 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Calendar className="h-4 w-4" />
-            <span>{format(new Date(post.date), "MMM d, yyyy")}</span>
+            <span>
+              {format(new Date(post.date), "MMM d, yyyy", { locale: lv })}
+            </span>
           </div>
           <div className="flex items-center gap-1.5">
             <Clock className="h-4 w-4" />

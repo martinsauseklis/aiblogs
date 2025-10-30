@@ -10,6 +10,7 @@ import { calculateReadingTime } from "@/lib/utils";
 import { components } from "@/components/mdx-component";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import { lv } from "date-fns/locale/lv";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -126,10 +127,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
         <header className="mb-8">
           <div className="flex items-center gap-4 text-muted-foreground mb-4">
-            <time>{format(new Date(post.date), "MMMM d, yyyy")}</time>
+            <time>
+              {format(new Date(post.date), "d. MMMM, yyyy", { locale: lv })}
+            </time>
             {post.author && <span>By {post.author}</span>}
             <span>{calculateReadingTime(wordCount)}</span>
-            <span>{wordCount} words</span>
+            <span>{wordCount} vārdi</span>
           </div>
 
           <h1 className="text-4xl font-bold mb-4 text-foreground">
