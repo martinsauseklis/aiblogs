@@ -3,8 +3,10 @@ import { NotionToMarkdown } from "notion-to-md";
 import { PageObjectResponse } from "@notionhq/client/";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.local"})
 
-export const notion = new Client({ auth: process.env.NOTION_TOKEN });
+export const notion = new Client({ auth: process.env.NOTION_TOKEN  });
 export const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export interface Post {
