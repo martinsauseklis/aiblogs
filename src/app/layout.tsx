@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "aiblogs.lv",
-    template: `%s | Gesturs`,
+    template: `%s | aiblogs.lv`,
   },
-  description: "A blog built with Next.js and Notion",
+  description: "aiblogs.lv - dažādi AI jaunumi latviski",
   robots: {
     index: true,
     follow: true,

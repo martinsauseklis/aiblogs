@@ -93,7 +93,7 @@ export default async function PostPage({ params }: PostPageProps) {
     },
     publisher: {
       "@type": "Organization",
-      name: "Your Site Name",
+      name: "aiblogs.lv",
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logo.png`,
